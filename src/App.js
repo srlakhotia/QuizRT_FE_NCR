@@ -1,31 +1,34 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
-import logo from './logo.svg';
-import AppBar from 'material-ui/AppBar';
+
+import Roots from './roots.js';
 import './App.css';
+
+
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom'
+import { Provider } from 'react-redux';
+
+import configureStore from './store/configure-store';
+const store = configureStore();
+
 
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider>
-        <AppBar
-          title="QuizRT"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
-        />
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
-          </div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-          <RaisedButton label="Material UI" />
-        </div>
-      </MuiThemeProvider>
+      <Provider store={store}>
+        <MuiThemeProvider>
+
+          <Router >
+            {Roots}
+          </Router>
+        </MuiThemeProvider>
+
+      </Provider>
     );
   }
 }
+
 
 export default App;
