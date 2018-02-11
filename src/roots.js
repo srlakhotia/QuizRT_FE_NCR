@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import Home from './components/index';
-import Topic from './components/container/topic';
+import Home from './modules/index';
+import Topic from './modules/container/topic';
 import { Route, } from 'react-router-dom';
 
 const Roots = (
