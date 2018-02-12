@@ -1,7 +1,8 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 
-class Topic extends React.Component {
+
+class Player extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -9,7 +10,7 @@ class Topic extends React.Component {
     render() {
         return (
             <AppBar
-                title="Topic"
+                title="<Player Name>"
                 iconClassNameRight="muidocs-icon-navigation-expand-more"
                 showMenuIconButton={false}
             />
@@ -17,4 +18,4 @@ class Topic extends React.Component {
     }
 }
 
-export default Topic;
+export default Player;
