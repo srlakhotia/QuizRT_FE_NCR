@@ -1,5 +1,6 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
+import TopicList from '../components/topicList.component';
 
 
 class Player extends React.Component {
@@ -9,11 +10,14 @@ class Player extends React.Component {
 
     render() {
         return (
-            <AppBar
-                title="<Player Name>"
-                iconClassNameRight="muidocs-icon-navigation-expand-more"
-                showMenuIconButton={false}
-            />
+            <React.Fragment>
+                <AppBar
+                    title="<Player Name>"
+                    iconClassNameRight="muidocs-icon-navigation-expand-more"
+                    showMenuIconButton={false}
+                />
+                <TopicList></TopicList>
+            </React.Fragment>
         )
     }
 }
