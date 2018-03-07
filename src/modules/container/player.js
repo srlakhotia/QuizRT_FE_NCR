@@ -7,17 +7,19 @@ import PlayerInfo from '../components/player-info';
 class Player extends React.Component {
     constructor(props) {
         super(props);
+
+        this.playerName = "Ethan Hunt"
     }
 
     render() {
         return (
             <React.Fragment>
                 <AppBar
-                    title="<Player Name>"
+                    title={this.playerName}
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                     showMenuIconButton={false}
                 />
-                <PlayerInfo></PlayerInfo>
+                <PlayerInfo playerName={this.playerName}></PlayerInfo>
                 <TopicList></TopicList>
             </React.Fragment>
         )
