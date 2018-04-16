@@ -5,7 +5,7 @@ import PlayerInfo from '../components/player-info';
 import FriendsList from '../components/playerFriends.component';
 import NewsFeed from '../components/playerNewsFeed.component';
 import PlayerStats from '../components/playerStats.component';
-
+import SuggestedTopics from '../components/sugestedTopic.component';
 
 class Player extends React.Component {
     constructor(props) {
@@ -24,8 +24,11 @@ class Player extends React.Component {
                 />
                 <PlayerInfo playerName={this.playerName}></PlayerInfo>
                 <TopicList></TopicList>
+                <SuggestedTopics></SuggestedTopics>
                 <FriendsList></FriendsList>
+                <PlayerStats></PlayerStats>
                 <NewsFeed></NewsFeed>
+                
             </React.Fragment>
         )
     }

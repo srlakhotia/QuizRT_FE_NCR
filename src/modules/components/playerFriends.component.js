@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardTitle, CardText} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
 import {Link} from 'react-router-dom';
-import { colors } from 'material-ui/styles';
 import './player-info.css';
 
 export default class FriendsList extends Component {
@@ -57,14 +56,14 @@ export default class FriendsList extends Component {
 
     render() {
         const friendListMap = this.friendsList.map((friend) => {
-            const friendLink = `/friend/${friend.friendID}`;
+            const friendLink = `/player/${friend.friendID}`;
             return (<li style={this.styles.paperListStyles} onClick={(evt)=> this.goTofriend(friend.friendID)} >
                         <Link to={friendLink}>
                             <Paper
                             zDepth={3}
                             style={this.styles.paperStyles}
                             circle={true}>
-                                <img src={friend.friendImage} width="100%" />
+                                <img src={friend.friendImage} width="100%" alt={friend.name} />
                             </Paper>
                             <CardText style={{textAlign: 'center'}}>{friend.name}</CardText>
                         </Link>

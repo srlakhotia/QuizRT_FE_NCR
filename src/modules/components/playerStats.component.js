@@ -1,41 +1,44 @@
 import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import Paper from 'material-ui/Paper';
-import {Link} from 'react-router-dom';
+import {Card, CardTitle, CardText} from 'material-ui/Card';
 
-export default class TopicList extends Component {
+export default class Stats extends Component {
     constructor(props) {
         super(props);
 
-        this.title = 'Topic list title';
-        this.topicList = [{
-            topicID: '1',
+        this.title = 'Player Statistics';
+        this.statsList = [{
+            statsListID: '1',
             title: 'Topic 1',
-            topicImage: 'https://dummyimage.com/300',
+            status: 'Completed',
+            level: 5
         }, {
-            topicID: '2',
+            statsListID: '2',
             title: 'Topic 2',
-            topicImage: 'https://dummyimage.com/300',
+            status: 'Completed',
+            level: 4
         }, {
-            topicID: '3',
+            statsListID: '3',
             title: 'Topic 3',
-            topicImage: 'https://dummyimage.com/300',
+            status: 'Not Completed',
+            level: 3
         }, {
-            topicID: '4',
+            statsListID: '4',
             title: 'Topic 4',
-            topicImage: 'https://dummyimage.com/300',
+            status: 'Not Completed',
+            level: 2
         }, {
-            topicID: '5',
+            statsListID: '5',
             title: 'Topic 5',
-            topicImage: 'https://dummyimage.com/300',
+            status: 'Completed',
+            level: 8
         }, {
-            topicID: '6',
+            statsListID: '6',
             title: 'Topic 6',
-            topicImage: 'https://dummyimage.com/300',
+            status: 'Not Completed',
+            level: 10
         }];
         this.styles = {
             paperListStyles: {
-                display: 'inline-block',
                 cursor: 'pointer'
             },
             paperStyles: {
@@ -47,24 +50,17 @@ export default class TopicList extends Component {
             }
         }
 
-        this.goToTopic = (topicID) => {
+        this.goToTopic = (statsListID) => {
                 
         };
     }
 
     render() {
-        const topicListMap = this.topicList.map((topic) => {
-            const topicLink = `/topic/${topic.topicID}`;
-            return (<li style={this.styles.paperListStyles} onClick={(evt)=> this.goToTopic(topic.topicID)}>
-                        <Link to={topicLink}>
-                            <Paper
-                            zDepth={3}
-                            style={this.styles.paperStyles}
-                            circle={true}>
-                                <img src={topic.topicImage} width="100%" />
-                            </Paper>
-                            <CardText style={{textAlign: 'center'}}>{topic.title}</CardText>
-                        </Link>
+        const statsListMap = this.statsList.map((statsList) => {
+            return (<li style={this.styles.paperListStyles}>
+                       <CardText>{statsList.title} <br />
+                       <span>{statsList.status} - Level {statsList.level} </span>
+                       </CardText>
                     </li>);
         });
         return(
@@ -74,7 +70,7 @@ export default class TopicList extends Component {
                         title={this.title}
                     ></CardTitle>
                     <ul>
-                        {topicListMap}
+                        {statsListMap}
                     </ul>
                 </Card>
             </React.Fragment>

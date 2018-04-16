@@ -24,3 +24,6 @@ span.offline:before {
 span.offline::before {
     color: red;  
 }
+.newsfeedlist li {
+    display: block;
+}

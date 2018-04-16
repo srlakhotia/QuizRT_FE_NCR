@@ -1,7 +1,7 @@
-import React, {Component}from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardTitle, CardText} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import { Rating } from 'material-ui-rating';
 import './player-info.css';

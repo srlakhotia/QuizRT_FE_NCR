@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import Paper from 'material-ui/Paper';
+import {Card,  CardTitle, CardText} from 'material-ui/Card';
 import {Link} from 'react-router-dom';
 
 export default class TopicList extends Component {
@@ -29,15 +28,7 @@ export default class TopicList extends Component {
         }];
         this.styles = {
             paperListStyles: {
-                display: 'inline-block',
                 cursor: 'pointer'
-            },
-            paperStyles: {
-                textAlign: 'center',
-                margin: 20,
-                overflow: 'hidden',
-                height: 100,
-                width: 100,
             }
         }
 
@@ -50,7 +41,7 @@ export default class TopicList extends Component {
         const newsListMap = this.newsList.map((news) => {
             return (<li style={this.styles.paperListStyles}>
                         <Link to={news.newsLink} target="_blank">
-                            <CardText style={{textAlign: 'center'}}>{news.newsTitle}</CardText>
+                            <CardText >{news.newsTitle}</CardText>
                         </Link>
                           
                     </li>);
