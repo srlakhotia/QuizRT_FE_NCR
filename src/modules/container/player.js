@@ -2,6 +2,9 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import TopicList from '../components/topicList.component';
 import PlayerInfo from '../components/player-info';
+import FriendsList from '../components/playerFriends.component';
+import NewsFeed from '../components/playerNewsFeed.component';
+import PlayerStats from '../components/playerStats.component';
 
 
 class Player extends React.Component {
@@ -21,6 +24,8 @@ class Player extends React.Component {
                 />
                 <PlayerInfo playerName={this.playerName}></PlayerInfo>
                 <TopicList></TopicList>
+                <FriendsList></FriendsList>
+                <NewsFeed></NewsFeed>
             </React.Fragment>
         )
     }
