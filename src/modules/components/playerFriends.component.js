@@ -57,7 +57,7 @@ export default class FriendsList extends Component {
     render() {
         const friendListMap = this.friendsList.map((friend) => {
             const friendLink = `/player/${friend.friendID}`;
-            return (<li style={this.styles.paperListStyles} onClick={(evt)=> this.goTofriend(friend.friendID)} >
+            return (<li style={this.styles.paperListStyles} onClick={(evt)=> this.goToFriend(friend.friendID)} >
                         <Link to={friendLink}>
                             <Paper
                             zDepth={3}
